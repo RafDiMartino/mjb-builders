@@ -15,7 +15,7 @@ const ServicesSection = () => {
           <ServicesImage src="/assets/services-section/roofing.webp" alt="Roofing image" title="ROOFING" />
           <ServicesImage src="/assets/services-section/extension.webp" alt="Extension image" title="EXTENSIONS" />
         </div>
-        <div className="flex w-full justify-center items-center space-x-8 pt-4">
+        <div className="flex flex-col md:flex-row w-full justify-center items-center space-y-8 md:space-y-0 md:space-x-8 pt-4">
           <Button href={"/#contact"} text={"Contact us for a free estimate"} />
           <Button href={"/#gallery"} text={"See our gallery"} />
         </div>
