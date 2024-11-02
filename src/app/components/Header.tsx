@@ -57,6 +57,7 @@ const Header = () => {
       {/* Mobile Navigation */}
       <nav className={isOpen ? "lg:hidden bg-black flex flex-col items-center justify-center h-fit min-h-[calc(100vh-87px)] absolute left-0 top-[87px] duration-300 ease-linear w-full" : "h-0 absolute flex flex-col items-center justify-start overflow-hidden top-[87px] left-0 duration-150 ease-linear w-full"}>
         <ul className="w-full [&>li]:py-4 [&>li]:text-white [&>li]:text-xl [&>li]:text-center [&>li>a.active]:text-green [&>li>a.active]:underline [&>li>a.active]:underline-offset-8 [&>li>a.active]:decoration-2">
+          <li onClick={toggleMenu}><Link href="#home" className={`${currentHash === "#home" ? "active" : ""} hover:text-green transition-colors`}>Home</Link></li>
           <li onClick={toggleMenu}><Link href="#services" className={`${currentHash === "#services" ? "active" : ""} hover:text-green transition-colors`}>Services</Link></li>
           <li onClick={toggleMenu}><Link href="#gallery" className={`${currentHash === "#gallery" ? "active" : ""} hover:text-green transition-colors`}>Gallery</Link></li>
           <li onClick={toggleMenu}><Link href="#about" className={`${currentHash === "#about" ? "active" : ""} hover:text-green transition-colors`}>About</Link></li>
