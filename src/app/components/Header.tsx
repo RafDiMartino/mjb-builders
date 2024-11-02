@@ -11,7 +11,7 @@ const Header = () => {
   const toggleMenu = () => setOpen(!isOpen);
 
   useEffect(() => {
-    setCurrentHash(window.location.hash || "");
+    setCurrentHash(window.location.hash || "#home");
     const observerOptions = {
       root: null,
       rootMargin: "0px",
@@ -27,7 +27,7 @@ const Header = () => {
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    const sections = document.querySelectorAll("div[id]");
+    const sections = document.querySelectorAll("div[id], section[id]");
 
     sections.forEach((section) => observer.observe(section));
 
