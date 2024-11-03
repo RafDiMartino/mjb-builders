@@ -32,6 +32,6 @@ h1,h2 {
   font-family: var(--font-gotham-medium);
 }
 
-p {
+p,a {
   font-family: var(--font-poppins-medium);
 }
