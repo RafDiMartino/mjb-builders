@@ -7,7 +7,7 @@ const ServicesSection = () => {
   return (
     <SectionContainer>
       <div id="services" className="w-full py-20">
-        <Heading heading={"Our Services"}></Heading>
+        <Heading className="font-bold" heading={"Our Services"}/>
         <p>We can undertake all your building needs, from kitchens, bathrooms, roofing, house extensions and renovations.</p>
         <div className="w-full flex flex-wrap flex-row gap-8 justify-center items-center py-20">
           <ServicesImage src="/assets/services-section/kitchen.webp" alt="Kintchen image" title="KITCHENS" />

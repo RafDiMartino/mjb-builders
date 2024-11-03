@@ -22,6 +22,10 @@ const config: Config = {
         'primary': '0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 4px 4px rgba(0,0,0,0.11), 0 6px 8px rgba(0,0,0,0.11), 0 2px 16px rgba(0,0,0,0.11)',
         'secondary': '0 0px 0px rgba(0,0,0,0.11), 0 1px 1px rgba(0,0,0,0.11), 0 2px 2px rgba(0,0,0,0.11), 0 3px 4px rgba(0,0,0,0.11), 0 1px 8px rgba(0,0,0,0.11)'
       },
+      fontFamily: {
+        header: ['var(--font-gotham-medium)'],
+        copy: ['var(--font-poppins-medium)']
+      },
     },
   },
   plugins: [],

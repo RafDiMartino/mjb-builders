@@ -28,6 +28,10 @@ body {
   color: #ffffff;
 }
 
-h1,h2,p {
-  color: var(--white);
+h1,h2 {
+  font-family: var(--font-gotham-medium);
+}
+
+p {
+  font-family: var(--font-poppins-medium);
 }

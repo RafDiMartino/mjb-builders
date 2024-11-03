@@ -4,14 +4,14 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const gotham = localFont({
+  src: "./fonts/Gotham-Medium.woff2",
+  variable: "--font-gotham-medium",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
+const poppins = localFont({
+  src: "./fonts/Poppins-Medium.woff2",
+  variable: "--font-poppins-medium",
   weight: "100 900",
 });
 
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${gotham.variable} ${poppins.variable} antialiased`}
       >
         <Header />
         {children}
