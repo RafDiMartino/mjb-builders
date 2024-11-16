@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import SectionContainer from "./SectionContainer";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/splide/css";
-import "../globals.css"
+import "./Carousel.css"
 import Heading from "./Heading";
 
 const ThumbnailCarousel = () => {
