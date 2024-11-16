@@ -18,7 +18,7 @@ const Header = () => {
       threshold: 0.5, // Trigger when 50% of the section is visible
     };
 
-    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+    const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setCurrentHash(`#${entry.target.id}`);

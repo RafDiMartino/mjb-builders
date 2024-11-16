@@ -1,16 +1,14 @@
-// To fix TS error with @splidejs/react-splide, see https://github.com/Splidejs/splide/issues/1179.
 "use client";
 import React, { useRef } from "react";
 import SectionContainer from "./SectionContainer";
-// @ts-expect-error resolving build error
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/css"; // Import Splide styles
+import "@splidejs/splide/css";
 import "../globals.css"
 import Heading from "./Heading";
 
 const ThumbnailCarousel = () => {
-  const mainSliderRef = useRef<any>(null);
-  const thumbnailSliderRef = useRef<any>(null);
+  const mainSliderRef = useRef(null);
+  const thumbnailSliderRef = useRef(null);
 
   const images = [
     "assets/gallery/img-1.webp",
@@ -41,7 +39,7 @@ const ThumbnailCarousel = () => {
               arrow: 'splide__arrow custom-arrow',
             },
           }}
-          onMounted={(splide: any) => (mainSliderRef.current = splide)}
+          onMounted={(splide) => (mainSliderRef.current = splide)}
           className="my-6"
         >
           {images.map((image, index) => (
@@ -67,7 +65,7 @@ const ThumbnailCarousel = () => {
             cover: true,
             arrows: false,
           }}
-          onMounted={(splide: any) => {
+          onMounted={(splide) => {
             thumbnailSliderRef.current = splide;
             if (mainSliderRef.current) {
               mainSliderRef.current.sync(splide); // Sync the main and thumbnail sliders

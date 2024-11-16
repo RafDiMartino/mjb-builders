@@ -1,11 +1,5 @@
 
-interface Props {
-  src: string
-  alt: string
-  title: string
-}
-
-const ServicesImage = ({ src, alt, title } : Props) => {
+const ServicesImage = ({ src, alt, title }) => {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="bg-green rounded-full w-[288px] h-[288px] shadow-primary flex justify-center items-center mb-8">
