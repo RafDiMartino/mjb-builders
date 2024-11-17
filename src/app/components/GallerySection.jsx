@@ -1,90 +1,65 @@
-"use client";
-import React, { useRef } from "react";
-import SectionContainer from "./SectionContainer";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import "@splidejs/splide/css";
-import "./Carousel.css"
+"use client"
+import { useState } from "react";
+import { RowsPhotoAlbum } from "react-photo-album";
+import "react-photo-album/rows.css";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Heading from "./Heading";
 
-const ThumbnailCarousel = () => {
-  const mainSliderRef = useRef(null);
-  const thumbnailSliderRef = useRef(null);
+const breakpoints = [1080, 640, 384, 256, 128, 96, 64, 48];
 
-  const images = [
-    "assets/gallery/img-1.webp",
-    "assets/gallery/img-2.webp",
-    "assets/gallery/img-3.webp",
-    "assets/gallery/img-4.webp",
-    "assets/gallery/img-5.webp",
-    "assets/gallery/img-6.webp",
-    "assets/gallery/img-7.webp",
-    "assets/gallery/img-8.webp",
-    "assets/gallery/img-9.webp",
-  ];
+function assetLink(src, width) {
+  return `${src}?w=${width}&q=75`; // Modify this function if needed for your asset pipeline
+}
+
+const images = [
+  { src: "assets/gallery/img-1.webp", width: 1200, height: 800 },
+  { src: "assets/gallery/img-2.webp", width: 1080, height: 720 },
+  { src: "assets/gallery/img-3.webp", width: 1080, height: 720 },
+  { src: "assets/gallery/img-4.webp", width: 1200, height: 1620 },
+  { src: "assets/gallery/img-5.webp", width: 1000, height: 1500 },
+  { src: "assets/gallery/img-6.webp", width: 1200, height: 800 },
+  { src: "assets/gallery/img-7.webp", width: 1080, height: 1200 },
+  { src: "assets/gallery/img-8.webp", width: 800, height: 600 },
+  { src: "assets/gallery/img-9.webp", width: 1080, height: 1440 },
+];
+
+const photos = images.map(({ src, width, height }, index) => ({
+  src: assetLink(src, width), // Full-size image
+  alt: `Image ${index + 1}`, // Generic alt text (replace as needed)
+  width,
+  height,
+  srcSet: breakpoints.map((breakpoint) => ({
+    src: assetLink(src, breakpoint), // Resized image
+    width: breakpoint,
+    height: Math.round((height / width) * breakpoint), // Calculate height to maintain aspect ratio
+  })),
+}));
+
+const Gallery = () => {
+  const [index, setIndex] = useState(-1);
 
   return (
-    <SectionContainer>
-      <div id="gallery" className="w-full py-20">
-        <Heading heading={"Gallery"} />
-        {/* Main carousel */}
-        <Splide
-          options={{
-            type: "fade",
-            heightRatio: 0.5,
-            pagination: false,
-            arrows: true,
-            rewind: true,
-            classes: {
-              arrows: 'splide__arrows custom-arrows',
-              arrow: 'splide__arrow custom-arrow',
-            },
-          }}
-          onMounted={(splide) => (mainSliderRef.current = splide)}
-          className="my-6"
-        >
-          {images.map((image, index) => (
-            <SplideSlide key={index}>
-              <img
-                src={image}
-                alt={`Slide ${index}`}
-                className="object-scale-down w-full h-full"
-              />
-            </SplideSlide>
-          ))}
-        </Splide>
-
-        {/* Thumbnail carousel */}
-        <Splide
-          options={{
-            fixedWidth: 100,
-            fixedHeight: 64,
-            isNavigation: true,
-            gap: 10,
-            focus: "center",
-            pagination: false,
-            cover: true,
-            arrows: false,
-          }}
-          onMounted={(splide) => {
-            thumbnailSliderRef.current = splide;
-            if (mainSliderRef.current) {
-              mainSliderRef.current.sync(splide); // Sync the main and thumbnail sliders
-            }
-          }}
-          className="flex justify-center"
-        >
-          {images.map((image, index) => (
-            <SplideSlide key={index} className="rounded-lg">
-              <img
-                src={image}
-                alt={`Thumbnail ${index}`}
-              />
-            </SplideSlide>
-          ))}
-        </Splide>
+    <section id="gallery" className="w-full flex flex-col justify-center items-center py-20">
+      <div className="w-full max-w-8xl px-4">
+        <Heading heading="Gallery" />
+        <div className="py-8">
+          <RowsPhotoAlbum photos={photos} targetRowHeight={200} onClick={({ index }) => setIndex(index)} />
+          <Lightbox
+            slides={photos}
+            open={index >= 0}
+            index={index}
+            close={() => setIndex(-1)}
+            // enable optional lightbox plugins
+            plugins={[Thumbnails, Zoom]}
+          />
+        </div>
       </div>
-    </SectionContainer>
+    </section>
   );
 };
 
-export default ThumbnailCarousel;
+export default Gallery;
