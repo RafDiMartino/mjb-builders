@@ -18,13 +18,20 @@ function assetLink(src, width) {
 const images = [
   { src: "assets/gallery/img-1.webp", width: 1200, height: 800 },
   { src: "assets/gallery/img-2.webp", width: 1080, height: 720 },
-  { src: "assets/gallery/img-3.webp", width: 1080, height: 720 },
-  { src: "assets/gallery/img-4.webp", width: 1200, height: 1620 },
-  { src: "assets/gallery/img-5.webp", width: 1000, height: 1500 },
+  { src: "assets/gallery/img-3.webp", width: 1080, height: 1500 },
+  { src: "assets/gallery/img-5.webp", width: 1300, height: 1500 },
+  { src: "assets/gallery/img-4.webp", width: 1300, height: 1500 },
   { src: "assets/gallery/img-6.webp", width: 1200, height: 800 },
-  { src: "assets/gallery/img-7.webp", width: 1080, height: 1200 },
-  { src: "assets/gallery/img-8.webp", width: 800, height: 600 },
-  { src: "assets/gallery/img-9.webp", width: 1080, height: 1440 },
+  { src: "assets/gallery/img-7.webp", width: 800, height: 600 },
+  { src: "assets/gallery/img-8.webp", width: 1080, height: 1440 },
+  { src: "assets/gallery/img-9.webp", width: 1080, height: 1500 },
+  { src: "assets/gallery/img-10.webp", width: 1080, height: 800 },
+  { src: "assets/gallery/img-11.webp", width: 1080, height: 1500 },
+  { src: "assets/gallery/img-12.webp", width: 1080, height: 800 },
+  { src: "assets/gallery/img-13.webp", width: 1080, height: 800 },
+  { src: "assets/gallery/img-14.webp", width: 1080, height: 1000 },
+  { src: "assets/gallery/img-15.webp", width: 1080, height: 1000 },
+  { src: "assets/gallery/img-16.webp", width: 1080, height: 1000 },
 ];
 
 const photos = images.map(({ src, width, height }, index) => ({
