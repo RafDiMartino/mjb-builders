@@ -50,7 +50,7 @@ const Gallery = () => {
   const [index, setIndex] = useState(-1);
 
   return (
-    <section id="gallery" className="w-full flex flex-col justify-center items-center py-20">
+    <section id="gallery" className="w-full flex flex-col justify-center items-center pt-20">
       <div className="w-full max-w-8xl px-4">
         <Heading heading="Gallery" />
         <div className="py-8">

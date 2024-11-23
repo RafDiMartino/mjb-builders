@@ -1,7 +1,10 @@
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { ThemeProvider } from '@mui/material/styles'
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import theme from "./mui-theme";
 
 const gotham = localFont({
   src: "./fonts/Gotham-Medium.woff2",
@@ -25,9 +28,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${gotham.variable} ${poppins.variable} antialiased`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            <Header />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );

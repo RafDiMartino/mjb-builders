@@ -1,7 +1,9 @@
+"use client"
 import SectionContainer from "./components/SectionContainer"
 import HeroSection from "./components/HeroSection"
 import ServicesSection from "./components/ServicesSection"
 import GallerySection from "./components/GallerySection"
+import ContactSection from "./components/ContactSection"
 
 export default function Home() {
   return (
@@ -9,12 +11,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <GallerySection />
-      <SectionContainer>
-        <div className="w-full flex flex-col">
-          <div id="about" className="h-screen border border-red-700">About</div>
-          <div id="contact" className="h-screen border border-red-700">Contact</div>
-        </div>
-      </SectionContainer>
+      <ContactSection />
     </main>
   )
 }
