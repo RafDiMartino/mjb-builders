@@ -1,5 +1,4 @@
 "use client"
-import SectionContainer from "./components/SectionContainer"
 import HeroSection from "./components/HeroSection"
 import ServicesSection from "./components/ServicesSection"
 import GallerySection from "./components/GallerySection"

@@ -1,6 +1,4 @@
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import DialogActions from "@mui/material/DialogActions";
 import SectionContainer from "./SectionContainer";
 import Heading from "./Heading";
 
@@ -32,7 +30,7 @@ const ContactSection = () => {
     <SectionContainer className="flex flex-col">
       <div id="contact" className="w-full pt-20">
         <Heading heading="Contact Us" />
-        <p>You can get in touch with us by sending a message through the contact form or using the links below."</p>
+        <p>You can get in touch with us by sending a message through the contact form or using the links below.</p>
         <form className="flex flex-col justify-center items-center w-full py-12 sm:py-20 sm:px-10" onSubmit={handleSubmit}>
           <div className="flex flex-wrap justify-between gap-5">
             <div className="flex gap-5 w-full">
